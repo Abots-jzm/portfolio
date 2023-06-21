@@ -15,6 +15,7 @@ export default Layout;
 
 const Container = styled.div`
 	max-width: 110rem;
-	padding: 0 1rem;
+	padding: 0 2rem;
 	margin: 0 auto;
+	position: relative;
 `;

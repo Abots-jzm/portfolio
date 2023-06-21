@@ -1,5 +1,11 @@
+import Hero from "../components/home/Hero";
+
 function Home() {
-	return <div>abots</div>;
+	return (
+		<>
+			<Hero />
+		</>
+	);
 }
 
 export default Home;

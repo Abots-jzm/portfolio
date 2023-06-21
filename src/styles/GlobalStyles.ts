@@ -13,6 +13,11 @@ const GlobalStyles = createGlobalStyle`
   --color-yellow-primary: #d3b900;
 }
 
+::selection{
+  background-color: var(--color-purple-light);
+  color: var(--color-purple-dark);
+}
+
 *,
 *::before,
 *::after {
@@ -49,6 +54,7 @@ textarea,
 select {
   font: inherit;
   color: inherit;
+  border: none;
 }
 
 button {
