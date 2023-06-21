@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
-import Animation from "../hero/Animation";
+import PicturePNG from "../../assets/abots-pic.png";
 
 function Hero() {
 	return (
@@ -22,17 +22,19 @@ function Hero() {
 					<BsArrowRight />
 				</button>
 			</div>
-			<AnimationContainer>
-				<Animation />
-			</AnimationContainer>
+			<Picture>
+				<img src={PicturePNG} alt="yoo" />
+			</Picture>
 		</Container>
 	);
 }
 
 export default Hero;
 
-const AnimationContainer = styled.div`
+const Picture = styled.div`
 	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
 `;
 
 const Container = styled.div`
