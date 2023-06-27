@@ -44,6 +44,10 @@ const Container = styled.div`
 	line-height: 1.5;
 	align-items: center;
 
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
+
 	& > div {
 		flex: 1;
 	}
@@ -52,7 +56,7 @@ const Container = styled.div`
 		margin: 2rem 0;
 		font-size: 4.8rem;
 		font-weight: 700;
-		background-image: linear-gradient(135deg, var(--color-purple-light), var(--color-purple-primary));
+		background-image: var(--color-gradient-purple);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

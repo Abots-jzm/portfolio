@@ -10,6 +10,8 @@ const GlobalStyles = createGlobalStyle`
   --color-purple-light: #d9bfff;
   --color-purple-dark: #3b0094;
 
+  --color-gradient-purple: linear-gradient(135deg, var(--color-purple-light), var(--color-purple-primary));
+
   --color-yellow-primary: #d3b900;
 }
 
@@ -39,6 +41,7 @@ body {
   font-weight: 400;
   background-color: var(--color-primary-black);
   color: var(--color-primary-white);
+  overflow-x: hidden;
 }
 
 img{
