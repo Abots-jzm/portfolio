@@ -1,11 +1,11 @@
-import ProjectsWidget from "./ProjectsWidget";
+import ProjectsCarousel from "./ProjectsCarousel";
 import SectionTitle from "./SectionTitle";
 
 function Projects() {
 	return (
 		<section>
 			<SectionTitle>projects</SectionTitle>
-			<ProjectsWidget />
+			<ProjectsCarousel />
 		</section>
 	);
 }

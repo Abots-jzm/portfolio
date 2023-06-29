@@ -35,7 +35,7 @@ type ContainerProps = {
 };
 
 const Container = styled.div<ContainerProps>`
-	border-radius: 20px;
+	border-radius: 16px;
 	padding: 3rem;
 	/* background-color: #222; */
 	border: 1px solid #d9bfff33;

@@ -14,8 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
   --color-yellow-primary: #d3b900;
 
-  //temp
-  --width: 450px;
+  --width: 35rem;
 }
 
 ::selection{
