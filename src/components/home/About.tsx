@@ -11,20 +11,20 @@ function About() {
 		<section>
 			<SectionTitle>about</SectionTitle>
 			<Grid>
-				<BentoCard title="experiences" rowSpan={2}>
-					<Experiences>
-						{experiences.map((experience) => (
-							<Experience {...experience} />
-						))}
-					</Experiences>
-				</BentoCard>
 				<BentoCard title="what I do" columnSpan={2}>
 					<WhatIDo>{whatIDo}</WhatIDo>
 				</BentoCard>
+				<BentoCard title="experiences" rowSpan={2}>
+					<Experiences>
+						{experiences.map((experience, i) => (
+							<Experience key={i} {...experience} />
+						))}
+					</Experiences>
+				</BentoCard>
 				<BentoCard title="tech I use">
 					<Technologies>
-						{techIUse.map((tech) => (
-							<Technology>{tech}</Technology>
+						{techIUse.map((tech, i) => (
+							<Technology key={i}>{tech}</Technology>
 						))}
 					</Technologies>
 				</BentoCard>
@@ -39,7 +39,7 @@ function About() {
 export default About;
 
 const WhereIStay = styled.div`
-	padding-top: 1rem;
+	padding-top: 2.5rem;
 	font-size: 4.8rem;
 	font-weight: 700;
 	line-height: 1.5;
@@ -60,6 +60,10 @@ const Technologies = styled.div`
 	font-size: 1.2rem;
 	column-gap: 2rem;
 	row-gap: 1rem;
+
+	@media (max-width: 1024px) {
+		column-gap: 1rem;
+	}
 `;
 
 const Technology = styled.div`
@@ -83,4 +87,9 @@ const Grid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem;
+
+	@media (max-width: 900px) {
+		display: flex;
+		flex-direction: column;
+	}
 `;

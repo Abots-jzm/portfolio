@@ -34,7 +34,7 @@ const WaterMark = styled.div`
 
 const Container = styled.div`
 	font-size: 3.2rem;
-	margin: 10rem 0;
+	margin: 15rem 0 10rem;
 	position: relative;
 
 	.slash {

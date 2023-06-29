@@ -31,7 +31,7 @@ export const About = {
 		},
 	],
 	whatIDo:
-		"I am a front-end developer specialized in crafting beautiful and functional web experiences. I focus on user-centric design, creating intuitive interfaces that prioritize the user's needs. I bring life to designs using React esnuring scalability and efficiency in web applications. Cross-browser compatibility and responsive design are top priorities in my work. I value collaboration and communication, working closely with clients and teams to deliver exceptional results. I am always learning and staying up to date with the latest industry trends to create innovative web experiences. Let's work together to bring your ideas to reality!",
+		"I am a front-end developer specialized in crafting beautiful and functional web experiences. I focus on user-centric design, creating intuitive interfaces that prioritize the user's needs. I bring life to designs using React ensuring scalability and efficiency in web applications. Cross-browser compatibility and responsive design are top priorities in my work. I value collaboration and communication, working closely with clients and teams to deliver exceptional results. I am always learning and staying up to date with the latest industry trends to create innovative web experiences. Let's work together to bring your ideas to reality!",
 	techIUse: [
 		"HTML",
 		"CSS",
@@ -52,3 +52,5 @@ export const About = {
 	location: "ILORIN, NIGERIA",
 	// location: "TEXAS, USA.",
 };
+
+export const projects = [];

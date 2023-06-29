@@ -20,5 +20,5 @@ const Container = styled.main`
 	padding: 0 2rem;
 	margin: 0 auto;
 	position: relative;
-	margin-bottom: 500rem;
+	margin-bottom: 10rem;
 `;

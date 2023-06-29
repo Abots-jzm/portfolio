@@ -13,6 +13,9 @@ const GlobalStyles = createGlobalStyle`
   --color-gradient-purple: linear-gradient(135deg, var(--color-purple-light), var(--color-purple-primary));
 
   --color-yellow-primary: #d3b900;
+
+  //temp
+  --width: 450px;
 }
 
 ::selection{
