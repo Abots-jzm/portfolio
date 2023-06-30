@@ -43,7 +43,7 @@ body {
   font-weight: 400;
   background-color: var(--color-primary-black);
   color: var(--color-primary-white);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 img{

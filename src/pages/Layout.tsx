@@ -4,12 +4,12 @@ import { styled } from "styled-components";
 
 function Layout() {
 	return (
-		<>
+		<Overflow>
 			<Header />
 			<Container>
 				<Outlet />
 			</Container>
-		</>
+		</Overflow>
 	);
 }
 
@@ -21,4 +21,8 @@ const Container = styled.main`
 	margin: 0 auto;
 	position: relative;
 	margin-bottom: 10rem;
+`;
+
+const Overflow = styled.div`
+	overflow-x: hidden;
 `;
