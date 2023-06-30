@@ -44,6 +44,7 @@ const Container = styled.div<ContainerProps>`
 	border: 1px solid #d9bfff33;
 	border-bottom: none;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+	background-color: #1b1b1b70;
 
 	${({ columnSpan }) =>
 		columnSpan

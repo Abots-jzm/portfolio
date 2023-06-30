@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import { styled } from "styled-components";
+import MouseEffect from "../components/MouseEffect";
 
 function Layout() {
 	return (
 		<>
-			<Header />
-			<Overflow>
-				<Container>
-					<Outlet />
-				</Container>
-			</Overflow>
+			<MouseEffect />
+			<Container>
+				<Header />
+				<Outlet />
+			</Container>
 		</>
 	);
 }
@@ -21,10 +21,6 @@ const Container = styled.main`
 	max-width: 110rem;
 	padding: 0 2rem;
 	margin: 0 auto;
-	position: relative;
 	margin-bottom: 10rem;
-`;
-
-const Overflow = styled.div`
 	overflow-x: hidden;
 `;
