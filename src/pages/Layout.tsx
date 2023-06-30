@@ -4,12 +4,14 @@ import { styled } from "styled-components";
 
 function Layout() {
 	return (
-		<Overflow>
+		<>
 			<Header />
-			<Container>
-				<Outlet />
-			</Container>
-		</Overflow>
+			<Overflow>
+				<Container>
+					<Outlet />
+				</Container>
+			</Overflow>
+		</>
 	);
 }
 

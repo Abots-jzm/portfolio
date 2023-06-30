@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { css, styled } from "styled-components";
 import useScreenSize from "../../hooks/useScreenSize";
-import { BsSearch } from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight, BsSearch } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { projects as projectsData } from "../../data";
 
@@ -14,8 +14,8 @@ function ProjectsCarousel() {
 
 	function handleSlideClick(index: number) {
 		const max = screenWidth > 600 ? 8 : 5;
-		activateSlide(index);
 		if (index < 3 || index > max) return;
+		activateSlide(index);
 		if (index === max) nextSlide(index);
 		if (index === 3) prevSlide(index);
 	}
@@ -83,8 +83,14 @@ function ProjectsCarousel() {
 					))}
 				</AnimatePresence>
 			</CarouselList>
-			<Button onClick={() => nextSlide(activeIndex + 1)}>next</Button>
-			<Button onClick={() => prevSlide(activeIndex - 1)}>prev</Button>
+			<NavBtns>
+				<button onClick={() => prevSlide(activeIndex - 1)}>
+					<BsChevronLeft />
+				</button>
+				<button onClick={() => nextSlide(activeIndex + 1)}>
+					<BsChevronRight />
+				</button>
+			</NavBtns>
 		</Container>
 	);
 }
@@ -202,17 +208,29 @@ const Info = styled.div<CarouselItemProps>`
 		.name {
 			font-size: 2.4rem;
 			margin-top: 1rem;
-			margin-left: 1rem;
+			margin-left: 1.3rem;
+
+			${(props) =>
+				props.active &&
+				css`
+					max-width: 90%;
+					overflow-wrap: break-word;
+					word-wrap: break-word;
+					-webkit-hyphens: auto;
+					-ms-hyphens: auto;
+					-moz-hyphens: auto;
+					hyphens: auto;
+					margin-left: 1rem;
+					margin-right: 1rem;
+					margin-top: 2rem;
+					white-space: normal;
+				`}
 		}
 
 		.details {
 			font-size: 1.4rem;
 		}
 	}
-`;
-
-const Button = styled.div`
-	background-color: transparent;
 `;
 
 const CarouselItem = styled.li<CarouselItemProps>`
@@ -273,11 +291,6 @@ const CarouselItem = styled.li<CarouselItemProps>`
 		opacity: 0.8;
 	}
 
-	/* &:not(:nth-child(n + 4)) *:not(img),
-	&:nth-child(n + 10) *:not(img) {
-		opacity: 0 !important;
-	} */
-
 	@media (max-width: 800px) {
 		flex-basis: 15%;
 	}
@@ -325,26 +338,45 @@ const CarouselItem = styled.li<CarouselItemProps>`
 		&:nth-child(n + 7) img {
 			opacity: 0.8;
 		}
-
-		/* &:not(:nth-child(n + 4)) *,
-		&:nth-child(n + 7) * {
-			opacity: 0 !important;
-		} */
 	}
 `;
 
 const CarouselList = styled.ul`
 	display: flex;
-	overflow: hidden;
 	list-style: none;
 	gap: 2rem;
 	contain: layout;
 	isolation: isolate;
-	padding-bottom: 3rem;
 
 	@media screen and (max-width: 600px) {
 		gap: 1rem;
 	}
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+	overflow: hidden;
+	padding-bottom: 3rem;
+	position: relative;
+`;
+
+const NavBtns = styled.div`
+	position: absolute;
+	width: 100%;
+	top: 45%;
+	display: flex;
+	justify-content: space-between;
+
+	button {
+		background-color: transparent;
+		font-size: 3.2rem;
+		color: var(--color-purple-light);
+
+		@media (max-width: 600px) {
+			font-size: 2.4rem;
+
+			&:last-child {
+				margin-right: 7vw;
+			}
+		}
+	}
+`;
