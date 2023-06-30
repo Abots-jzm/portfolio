@@ -29,7 +29,7 @@ const Title = styled.div`
 	-webkit-text-fill-color: transparent;
 
 	@media (max-width: 600px) {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 	}
 `;
 

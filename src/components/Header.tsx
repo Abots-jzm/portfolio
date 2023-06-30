@@ -66,4 +66,8 @@ const Container = styled.div`
 		justify-content: space-between;
 		align-content: center;
 	}
+
+	@media (max-width: 600px) {
+		padding: 2rem 0;
+	}
 `;
