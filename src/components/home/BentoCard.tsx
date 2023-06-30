@@ -27,6 +27,10 @@ const Title = styled.div`
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 600px) {
+		margin-bottom: 1rem;
+	}
 `;
 
 type ContainerProps = {
@@ -37,7 +41,6 @@ type ContainerProps = {
 const Container = styled.div<ContainerProps>`
 	border-radius: 16px;
 	padding: 3rem;
-	/* background-color: #222; */
 	border: 1px solid #d9bfff33;
 	border-bottom: none;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -55,4 +58,8 @@ const Container = styled.div<ContainerProps>`
 					grid-row: span ${rowSpan};
 			  `
 			: ""}
+
+	@media (max-width: 600px) {
+		padding: 2rem;
+	}
 `;

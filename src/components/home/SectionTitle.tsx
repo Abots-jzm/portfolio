@@ -29,6 +29,8 @@ const WaterMark = styled.div`
 
 	@media (max-width: 600px) {
 		left: -10rem;
+		font-size: 15rem;
+		top: -7.5rem;
 	}
 `;
 
@@ -39,5 +41,9 @@ const Container = styled.div`
 
 	.slash {
 		color: var(--color-purple-light);
+	}
+
+	@media (max-width: 600px) {
+		margin: 7.5rem 0 5rem;
 	}
 `;
