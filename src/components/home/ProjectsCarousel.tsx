@@ -59,17 +59,23 @@ function ProjectsCarousel() {
 							<img src={project.image} alt={project.name + " pic"} />
 							<Info active={activeIndex === i}>
 								<div className="name">{project.name}</div>
-								<div className="details">
-									<div>{project.description}</div>
-									<div className="buttons">
-										<button>
-											<BsSearch />
-											<span>case study</span>
-										</button>
-										<a href={project.live} target="_blank">
-											<span>view site</span>
-											<BiLinkExternal />
-										</a>
+								<div className="details-overlay">
+									<div className="details">
+										<div>{project.description}</div>
+										<div className="buttons">
+											<button>
+												<div className="icon">
+													<BsSearch />
+												</div>
+												<span>case study</span>
+											</button>
+											<a href={project.live} target="_blank">
+												<span>view site</span>
+												<div className="icon">
+													<BiLinkExternal />
+												</div>
+											</a>
+										</div>
 									</div>
 								</div>
 							</Info>
@@ -94,6 +100,11 @@ const Info = styled.div<CarouselItemProps>`
 	inset: 0;
 	background-color: rgba(0, 0, 0, ${(props) => (props.active ? 0.8 : 0.85)});
 
+	.icon {
+		display: grid;
+		place-items: center;
+	}
+
 	.buttons {
 		background-color: transparent;
 		color: white;
@@ -110,6 +121,7 @@ const Info = styled.div<CarouselItemProps>`
 			justify-content: center;
 			align-items: center;
 			gap: 1rem;
+			white-space: nowrap;
 		}
 
 		a {
@@ -119,7 +131,7 @@ const Info = styled.div<CarouselItemProps>`
 		}
 	}
 
-	.details {
+	.details-overlay {
 		background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
 		height: 25rem;
 		position: absolute;
@@ -127,14 +139,20 @@ const Info = styled.div<CarouselItemProps>`
 		left: 0;
 		right: 0;
 		translate: 0 ${(props) => (props.active ? "0" : "100%")};
-		padding: 10rem 1rem 0;
+		/* padding: 10rem 1rem 0; */
+	}
+
+	.details {
+		padding: 0 1rem 5rem;
+		position: absolute;
+		bottom: 0;
 	}
 
 	.name {
 		font-size: 7.2rem;
 		transform-origin: left;
 		rotate: 90deg;
-		margin-left: 5rem;
+		margin-left: 4.5rem;
 		margin-top: -2rem;
 		color: var(--color-purple-light);
 		white-space: nowrap;
@@ -151,6 +169,45 @@ const Info = styled.div<CarouselItemProps>`
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 			`}
+	}
+
+	@media (max-width: 1024px) {
+		.name {
+			font-size: 6.4rem;
+			margin-left: 3rem;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.name {
+			font-size: 3.2rem;
+			margin-top: 2rem;
+			margin-left: 2rem;
+		}
+
+		.buttons {
+			flex-direction: column;
+		}
+
+		.details {
+			padding-bottom: 2rem;
+		}
+
+		.icon {
+			display: none;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.name {
+			font-size: 2.4rem;
+			margin-top: 1rem;
+			margin-left: 1rem;
+		}
+
+		.details {
+			font-size: 1.4rem;
+		}
 	}
 `;
 
@@ -228,6 +285,11 @@ const CarouselItem = styled.li<CarouselItemProps>`
 	@media screen and (max-width: 600px) {
 		flex-basis: 10%;
 		border-radius: 8px;
+		height: 45rem;
+
+		&:hover {
+			flex-basis: calc(var(--width) / 8);
+		}
 
 		${(props) =>
 			props.active &&
