@@ -7,10 +7,12 @@ function Layout() {
 	return (
 		<>
 			<MouseEffect />
-			<Container>
-				<Header />
-				<Outlet />
-			</Container>
+			<Overflow>
+				<Container>
+					<Header />
+					<Outlet />
+				</Container>
+			</Overflow>
 		</>
 	);
 }
@@ -22,5 +24,8 @@ const Container = styled.main`
 	padding: 0 2rem;
 	margin: 0 auto;
 	margin-bottom: 10rem;
+`;
+
+const Overflow = styled.div`
 	overflow-x: hidden;
 `;
