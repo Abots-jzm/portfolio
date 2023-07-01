@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { css, styled } from "styled-components";
 
@@ -10,7 +11,13 @@ type Props = {
 
 function BentoCard({ children, title, ...config }: Props) {
 	return (
-		<Container {...config}>
+		<Container
+			{...config}
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.3 }}
+			viewport={{ once: true }}
+		>
 			<Title>{title}</Title>
 			{children}
 		</Container>
@@ -38,7 +45,7 @@ type ContainerProps = {
 	columnSpan?: number;
 };
 
-const Container = styled.div<ContainerProps>`
+const Container = styled(motion.div)<ContainerProps>`
 	border-radius: 16px;
 	padding: 3rem;
 	border: 1px solid #d9bfff33;

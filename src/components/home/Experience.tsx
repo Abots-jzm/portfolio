@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 type Props = {
@@ -9,7 +10,12 @@ type Props = {
 
 function Experience({ logo, time, name, description }: Props) {
 	return (
-		<Container>
+		<Container
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5 }}
+			viewport={{ once: true }}
+		>
 			<Logo>
 				<img src={logo} alt={name + " logo"} />
 			</Logo>
@@ -62,7 +68,7 @@ const Logo = styled.div`
 	}
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
 	display: flex;
 	gap: 2rem;
 `;

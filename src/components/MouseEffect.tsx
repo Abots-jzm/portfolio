@@ -38,6 +38,6 @@ const Container = styled.div.attrs<ContainerProps>((props: ContainerProps) => ({
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background: radial-gradient(circle closest-side, #d9bfff08, transparent);
+	background: radial-gradient(circle closest-side, #d9bfff0f, transparent);
 	z-index: -100000;
 `;

@@ -3,12 +3,19 @@ import SectionTitle from "./SectionTitle";
 import BentoCard from "./BentoCard";
 import { About as AboutData } from "../../data";
 import Experience from "./Experience";
+import { motion } from "framer-motion";
 
 function About() {
 	const { experiences, whatIDo, techIUse, location } = AboutData;
+	const [line1, line2] = location.split(",");
 
 	return (
-		<section>
+		<motion.section
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.3 }}
+			viewport={{ once: true }}
+		>
 			<SectionTitle>about</SectionTitle>
 			<Grid>
 				<BentoCard title="what I do" columnSpan={2}>
@@ -29,10 +36,31 @@ function About() {
 					</Technologies>
 				</BentoCard>
 				<BentoCard title="where I stay">
-					<WhereIStay>{location}</WhereIStay>
+					<WhereIStay>
+						<motion.svg
+							initial={{ strokeDashoffset: 500 }}
+							whileInView={{ strokeDashoffset: 0 }}
+							transition={{ duration: 10 }}
+							viewport={{ once: true }}
+						>
+							<text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%">
+								{line1}
+							</text>
+						</motion.svg>
+						<motion.svg
+							initial={{ strokeDashoffset: 500 }}
+							whileInView={{ strokeDashoffset: 0 }}
+							transition={{ duration: 10 }}
+							viewport={{ once: true }}
+						>
+							<text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%">
+								{line2}
+							</text>
+						</motion.svg>
+					</WhereIStay>
 				</BentoCard>
 			</Grid>
-		</section>
+		</motion.section>
 	);
 }
 
@@ -40,12 +68,20 @@ export default About;
 
 const WhereIStay = styled.div`
 	padding-top: 2.5rem;
-	font-size: 4.8rem;
-	font-weight: 700;
-	line-height: 1.5;
-	color: transparent;
-	-webkit-text-stroke: 1px;
-	-webkit-text-stroke-color: #ccc;
+
+	svg {
+		stroke-dasharray: 500;
+		font-size: 80px;
+		fill-opacity: 0;
+		width: 100%;
+		height: 8rem;
+		stroke: #ccc;
+		stroke-width: 1;
+
+		text {
+			font-size: 4.8rem;
+		}
+	}
 `;
 
 const WhatIDo = styled.div`
