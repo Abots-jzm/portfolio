@@ -14,8 +14,9 @@ import TypingSpeedPNG from "./assets/projects/typing-speed.png";
 import HangmanPNG from "./assets/projects/hangman.png";
 import WeatherAppPNG from "./assets/projects/weather app.png";
 import WindBnbPNG from "./assets/projects/windbnb.png";
+import { Project } from "./types";
 
-export const projects = [
+export const projects: Project[] = [
 	{
 		id: 1,
 		name: "iris security",
@@ -95,6 +96,24 @@ export const projects = [
 		live: "https://abots-windbnb.netlify.app/",
 	},
 ];
+
+//Don't make the mistake of using the id instead of the index to set mobile projects
+export const mobileProjects = [
+	projects[4],
+	projects[5],
+	projects[3],
+	projects[6],
+	projects[7],
+	projects[2],
+	projects[8],
+	projects[9],
+	projects[1],
+	projects[10],
+	projects[0],
+	projects[11],
+];
+
+console.log(mobileProjects);
 
 export const socials = {
 	github: "https://github.com/Abots-jzm",

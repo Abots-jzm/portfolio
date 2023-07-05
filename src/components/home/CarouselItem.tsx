@@ -1,11 +1,12 @@
 import { BiLinkExternal } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { css, styled } from "styled-components";
+import { Project } from "../../types";
 
 type Props = {
 	active: boolean;
 	onClick: () => void;
-	project: { id: number; name: string; description: string; image: string; live: string };
+	project: Project;
 };
 
 function CarouselItem({ active, onClick, project }: Props) {
@@ -98,6 +99,7 @@ const Info = styled.div<CarouselItemProps>`
 		padding: 0 1rem 5rem;
 		position: absolute;
 		bottom: 0;
+		width: 100%;
 	}
 
 	.name {
@@ -132,9 +134,9 @@ const Info = styled.div<CarouselItemProps>`
 
 	@media (max-width: 900px) {
 		.name {
-			font-size: 3.2rem;
+			font-size: 4.8rem;
 			margin-top: 2rem;
-			margin-left: 2rem;
+			margin-left: 4rem;
 		}
 
 		.buttons {
@@ -143,38 +145,6 @@ const Info = styled.div<CarouselItemProps>`
 
 		.details {
 			padding-bottom: 2rem;
-		}
-
-		.icon {
-			display: none;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.name {
-			font-size: 2.4rem;
-			margin-top: 1rem;
-			margin-left: 1.3rem;
-
-			${(props) =>
-				props.active &&
-				css`
-					max-width: 90%;
-					overflow-wrap: break-word;
-					word-wrap: break-word;
-					-webkit-hyphens: auto;
-					-ms-hyphens: auto;
-					-moz-hyphens: auto;
-					hyphens: auto;
-					margin-left: 1rem;
-					margin-right: 1rem;
-					margin-top: 2rem;
-					white-space: normal;
-				`}
-		}
-
-		.details {
-			font-size: 1.4rem;
 		}
 	}
 `;
@@ -238,11 +208,7 @@ const Container = styled.li<CarouselItemProps>`
 		opacity: 0.8;
 	}
 
-	@media (max-width: 800px) {
-		flex-basis: 15%;
-	}
-
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 900px) {
 		flex-basis: 10%;
 		border-radius: 8px;
 		height: 45rem;
