@@ -3,5 +3,5 @@ export type Project = {
 	name: string;
 	description: string;
 	image: string;
-	live: string;
+	live?: string;
 };

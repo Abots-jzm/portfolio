@@ -3,6 +3,7 @@ import { Project } from "../../types";
 import { BsSearch } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 type Props = {
 	project: Project;
@@ -22,18 +23,20 @@ function MobileProjectCard({ project }: Props) {
 			<Details>
 				<div>{project.description}</div>
 				<div className="buttons">
-					<button>
+					<Link to={"/projects/" + project.name.split(" ").join("-")}>
 						<div className="icon">
 							<BsSearch />
 						</div>
 						<span>case study</span>
-					</button>
-					<a href={project.live} target="_blank">
-						<span>view site</span>
-						<div className="icon">
-							<BiLinkExternal />
-						</div>
-					</a>
+					</Link>
+					{project.live && (
+						<a href={project.live} target="_blank">
+							<span>view site</span>
+							<div className="icon">
+								<BiLinkExternal />
+							</div>
+						</a>
+					)}
 				</div>
 			</Details>
 		</Container>
@@ -59,7 +62,6 @@ const Details = styled.div`
 		margin-top: 2rem;
 		flex-wrap: wrap;
 
-		button,
 		a {
 			flex: 1;
 			background-color: var(--color-purple-primary);
@@ -77,7 +79,7 @@ const Details = styled.div`
 			}
 		}
 
-		a {
+		a:last-child {
 			background-color: transparent;
 			border: 1px solid var(--color-purple-light);
 			color: var(--color-purple-light);

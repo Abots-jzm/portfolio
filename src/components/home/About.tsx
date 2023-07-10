@@ -88,6 +88,7 @@ const WhatIDo = styled.div`
 	color: #ccc;
 	font-size: 1.6rem;
 	font-weight: 300;
+	line-height: 1.2;
 `;
 
 const Technologies = styled.div`

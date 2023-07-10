@@ -2,6 +2,7 @@ import { BiLinkExternal } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { css, styled } from "styled-components";
 import { Project } from "../../types";
+import { Link } from "react-router-dom";
 
 type Props = {
 	active: boolean;
@@ -19,18 +20,20 @@ function CarouselItem({ active, onClick, project }: Props) {
 					<div className="details">
 						<div>{project.description}</div>
 						<div className="buttons">
-							<button>
+							<Link to={"/projects/" + project.name.split(" ").join("-")}>
 								<div className="icon">
 									<BsSearch />
 								</div>
 								<span>case study</span>
-							</button>
-							<a href={project.live} target="_blank">
-								<span>view site</span>
-								<div className="icon">
-									<BiLinkExternal />
-								</div>
-							</a>
+							</Link>
+							{project.live && (
+								<a href={project.live} target="_blank">
+									<span>view site</span>
+									<div className="icon">
+										<BiLinkExternal />
+									</div>
+								</a>
+							)}
 						</div>
 					</div>
 				</div>
@@ -62,7 +65,6 @@ const Info = styled.div<CarouselItemProps>`
 		gap: 1rem;
 		margin-top: 2rem;
 
-		button,
 		a {
 			background-color: var(--color-purple-primary);
 			padding: 1rem;
@@ -78,7 +80,7 @@ const Info = styled.div<CarouselItemProps>`
 			}
 		}
 
-		a {
+		a:last-child {
 			background-color: transparent;
 			border: 1px solid var(--color-purple-light);
 			color: var(--color-purple-light);
