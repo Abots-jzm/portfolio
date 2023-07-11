@@ -15,6 +15,20 @@ const GlobalStyles = createGlobalStyle`
   --color-yellow-primary: #d3b900;
 
   --width: 40rem;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 30000rem;
+    background-color: #828282;
+		border: 1px solid #d9bfff33;
+  }
 }
 
 ::selection{
@@ -43,7 +57,6 @@ body {
   font-weight: 400;
   background-color: var(--color-primary-black);
   color: var(--color-primary-white);
-  /* overflow-x: hidden; */
 }
 
 img{

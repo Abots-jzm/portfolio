@@ -36,7 +36,12 @@ function Hero() {
 					knack for clean code and an eye for detail, I bring life to designs and turn ideas into reality. Join me on
 					this journey of innovation and creativity.
 				</motion.div>
-				<motion.button initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 2.5 }}>
+				<motion.a
+					href="#connect"
+					initial={{ opacity: 0, x: -200 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ delay: 2.5 }}
+				>
 					<span>Let's connect</span>
 					<motion.div
 						className="icon"
@@ -46,7 +51,7 @@ function Hero() {
 					>
 						<BsArrowRight />
 					</motion.div>
-				</motion.button>
+				</motion.a>
 			</div>
 			<Picture>
 				<img src={PicturePNG} alt="yoo" />
@@ -90,7 +95,9 @@ const Container = styled.div`
 		line-height: 1.3;
 	}
 
-	button {
+	a {
+		width: max-content;
+		cursor: pointer;
 		background-color: transparent;
 		margin-top: 3rem;
 		font-size: 1.8rem;

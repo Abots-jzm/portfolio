@@ -4,11 +4,19 @@ import { styled } from "styled-components";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { projectDetails } from "../data";
+import { useEffect } from "react";
 
 function CaseStudy() {
 	const { projectName } = useParams();
 	const formattedName = projectName?.split("-").join(" ") || "portfolio";
 	const project = projectDetails.find((detail) => detail.name === formattedName);
+
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			behavior: "instant",
+		});
+	}, []);
 
 	return (
 		<Container>

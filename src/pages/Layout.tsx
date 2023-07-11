@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import { styled } from "styled-components";
 import MouseEffect from "../components/MouseEffect";
+import Footer from "../components/Footer";
 
 function Layout() {
 	return (
@@ -11,6 +12,7 @@ function Layout() {
 				<Container>
 					<Header />
 					<Outlet />
+					<Footer />
 				</Container>
 			</Overflow>
 		</>
