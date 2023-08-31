@@ -337,6 +337,6 @@ export const About = {
 		"React Hook Forms",
 		"Recharts",
 	],
-	location: "ILORIN, NIGERIA",
-	// location: "TEXAS, USA.",
+	//location: "ILORIN, NIGERIA",
+	 location: "TEXAS, USA.",
 };
