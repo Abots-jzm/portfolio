@@ -304,7 +304,7 @@ export const mobileProjects = [
 export const socials = {
 	github: "https://github.com/Abots-jzm",
 	twitter: "https://twitter.com/The_Jazzmann",
-	linkedin: "https://ng.linkedin.com/in/oluwatobi-abolarin-3b1124225",
+	linkedin: "https://www.linkedin.com/in/oluwatobi-abolarin-996a5a292",
 };
 
 export const About = {
