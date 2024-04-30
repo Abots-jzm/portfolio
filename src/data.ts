@@ -71,7 +71,7 @@ export const projectDetails = [
 	{
 		name: "basket",
 		image: BasketPNG,
-		live: "https://flowbasket.com/",
+		// live: "https://flowbasket.com/",
 		overview:
 			"Basket is a web application designed to facilitate collaboration between artists and producers. It aims to provide a seamless platform for sharing ideas, exchanging feedback, and working together to create high-quality music projects. With a range of features including real-time messaging using Socket.IO, an interactive audio player, and the ability to upload music files, Basket offers a comprehensive solution for fostering creativity and productivity within the music production process.",
 		features: [
