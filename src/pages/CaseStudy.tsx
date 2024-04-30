@@ -9,7 +9,7 @@ import { useEffect } from "react";
 function CaseStudy() {
 	const { projectName } = useParams();
 	const formattedName = projectName?.split("-").join(" ") || "portfolio";
-	const project = projectDetails.find((detail) => detail.name === formattedName);
+	const project = projectDetails.find((detail) => detail.name.toLowerCase() === formattedName);
 
 	useEffect(() => {
 		window.scroll({

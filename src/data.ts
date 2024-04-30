@@ -12,7 +12,7 @@ import PortfolioPNG from "./assets/projects/portfolio.png";
 import ShoppingifyPNG from "./assets/projects/shoppingify.png";
 import TypingSpeedPNG from "./assets/projects/typing-speed.png";
 import HangmanPNG from "./assets/projects/hangman.png";
-import WeatherAppPNG from "./assets/projects/weather app.png";
+import LueesaPNG from "./assets/projects/lueesa.png";
 import WindBnbPNG from "./assets/projects/windbnb.png";
 import { Project } from "./types";
 
@@ -174,13 +174,18 @@ export const projectDetails = [
 		technologies: ["HTML", "SCSS", "Javascript"],
 	},
 	{
-		name: "weather app",
-		image: WeatherAppPNG,
-		live: "https://abots-weather-app.netlify.app/",
-		github: "https://github.com/Abots-jzm/WeatherApp",
+		name: "LUEESA",
+		image: LueesaPNG,
+		live: "https://lueesa-web.vercel.app/",
 		overview:
-			"The Weather App is a front-end project that aims to provide users with up-to-date weather information, including current weather conditions and a one-week forecast. The app will offer a user-friendly interface, enabling users to easily access and understand weather data for any desired location. By leveraging open weather APIs, the Weather App will ensure accurate and reliable information for an enhanced user experience.",
-		technologies: ["HTML", "SCSS", "Javascript"],
+			"LUEESA is a modern web portal tailored for Landmark University students. It offers a centralized hub to access class notes, view personalized timetables, practice with past examination questions, and participate in student representative elections. With its user-friendly interface and comprehensive features, Lueesa streamlines academic life, promotes organization, and fosters an engaged student community.",
+		features: [
+			"Notes Repository: Students can upload, access, and organize their class notes in a user-friendly interface. The repository supports searching, filtering, and sharing notes seamlessly.",
+			"Timetable Management: Lueesa features a personalized timetable system that displays daily class schedules and important events. Users can sync their timetables with personal calendars and receive reminders.",
+			"Past Question Bank: To aid in exam preparation, the portal offers a comprehensive collection of previous exam questions. Students can filter questions by course, semester, and difficulty level, and practice with timed simulations.",
+			"Student Voting: Lueesa promotes campus democracy by enabling students to participate in elections for student representatives. Users can learn about candidate profiles, manifestos, and cast their votes securely.",
+		],
+		technologies: ["React", "Typescript", "TailwindCSS", "Firebase", "React Hook Form", "Zustand", "ShadCn"],
 	},
 	{
 		name: "windbnb",
@@ -227,7 +232,7 @@ export const projects: Project[] = [
 		name: "basket",
 		description: "A music collaboration app",
 		image: BasketPNG,
-		live: "https://flowbasket.com/",
+		// live: "https://flowbasket.com/",
 	},
 	{
 		id: 6,
@@ -236,7 +241,14 @@ export const projects: Project[] = [
 		image: TweeterPNG,
 		live: "https://abots-tweeter.netlify.app/",
 	},
-	{ id: 7, name: "portfolio", description: "My portfolio", image: PortfolioPNG },
+
+	{
+		id: 7,
+		name: "lueesa",
+		description: "A mini school portal",
+		image: LueesaPNG,
+		live: "https://lueesa-web.vercel.app/",
+	},
 	{
 		id: 8,
 		name: "Shoppingify",
@@ -260,10 +272,9 @@ export const projects: Project[] = [
 	},
 	{
 		id: 11,
-		name: "weather app",
-		description: "A weather app",
-		image: WeatherAppPNG,
-		live: "https://abots-weather-app.netlify.app/",
+		name: "portfolio",
+		description: "My portfolio",
+		image: PortfolioPNG,
 	},
 	{
 		id: 12,
@@ -338,5 +349,5 @@ export const About = {
 		"Recharts",
 	],
 	//location: "ILORIN, NIGERIA",
-	 location: "TEXAS, USA.",
+	location: "TEXAS, USA.",
 };
